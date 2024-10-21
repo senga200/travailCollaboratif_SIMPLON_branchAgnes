@@ -1,178 +1,182 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bibliomaniac</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="index.html">
-            <div class="animated-icon">
-                <svg class="book-shelf" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"
-                    viewBox="0 0 84 94" height="60" width="60">
-                    <path fill="none"
-                        d="M37.612 92.805L4.487 73.71c-2.75-1.587-4.45-4.52-4.45-7.687L.008 27.877c-.003-3.154 1.676-6.063 4.405-7.634L37.558 1.167c2.73-1.57 6.096-1.566 8.835.013l33.124 19.096c2.75 1.586 4.45 4.518 4.45 7.686l.028 38.146c.002 3.154-1.677 6.063-4.406 7.634L46.445 92.818c-2.73 1.57-6.096 1.566-8.834-.013z" />
-                    <g class="book-shelf__book book-shelf__book--one" fill-rule="evenodd">
-                        <path fill="#5199fc"
-                            d="M31 29h4c1.105 0 2 .895 2 2v29c0 1.105-.895 2-2 2h-4c-1.105 0-2-.895-2-2V31c0-1.105.895-2 2-2z" />
-                        <path fill="#afd7fb"
-                            d="M34 36h-2c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1zm-2 1h2c.552 0 1 .448 1 1s-.448 1-1 1h-2c-.552 0-1-.448-1-1s.448-1 1-1z" />
-                    </g>
-                    <g class="book-shelf__book book-shelf__book--two" fill-rule="evenodd">
-                        <path fill="#ff9868"
-                            d="M39 34h6c1.105 0 2 .895 2 2v24c0 1.105-.895 2-2 2h-6c-1.105 0-2-.895-2-2V36c0-1.105.895-2 2-2z" />
-                        <path fill="#d06061" d="M42 38c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z" />
-                    </g>
-                    <g class="book-shelf__book book-shelf__book--three" fill-rule="evenodd">
-                        <path fill="#ff5068"
-                            d="M49 32h2c1.105 0 2 .86 2 1.92v25.906c0 1.06-.895 1.92-2 1.92h-2c-1.105 0-2-.86-2-1.92V33.92c0-1.06.895-1.92 2-1.92z" />
-                        <path fill="#d93368"
-                            d="M50 35c.552 0 1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1v-2c0-.552.448-1 1-1z" />
-                    </g>
-                    <g fill-rule="evenodd">
-                        <path class="book-shelf__shelf" fill="#ae8280"
-                            d="M21 60h40c1.105 0 2 .895 2 2s-.895 2-2 2H21c-1.105 0-2-.895-2-2s.895-2 2-2z" />
-                        <path fill="#855f6d"
-                            d="M51.5 67c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5zm-21 0c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5z" />
-                    </g>
-                </svg>
-            </div>
-        </a>
-        <a href="index.html" class="title-link">
-            <h1>BIBLIOMANIAC</h1>
-        </a>
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher...">
-            <span class="search-icon">🔍</span>
+      <a href="index.html">
+        <div class="animated-icon">
+          <svg
+            class="book-shelf"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 84 94"
+            height="60"
+            width="60"
+          >
+            <path
+              fill="none"
+              d="M37.612 92.805L4.487 73.71c-2.75-1.587-4.45-4.52-4.45-7.687L.008 27.877c-.003-3.154 1.676-6.063 4.405-7.634L37.558 1.167c2.73-1.57 6.096-1.566 8.835.013l33.124 19.096c2.75 1.586 4.45 4.518 4.45 7.686l.028 38.146c.002 3.154-1.677 6.063-4.406 7.634L46.445 92.818c-2.73 1.57-6.096 1.566-8.834-.013z"
+            />
+            <g
+              class="book-shelf__book book-shelf__book--one"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#5199fc"
+                d="M31 29h4c1.105 0 2 .895 2 2v29c0 1.105-.895 2-2 2h-4c-1.105 0-2-.895-2-2V31c0-1.105.895-2 2-2z"
+              />
+              <path
+                fill="#afd7fb"
+                d="M34 36h-2c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1zm-2 1h2c.552 0 1 .448 1 1s-.448 1-1 1h-2c-.552 0-1-.448-1-1s.448-1 1-1z"
+              />
+            </g>
+            <g
+              class="book-shelf__book book-shelf__book--two"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#ff9868"
+                d="M39 34h6c1.105 0 2 .895 2 2v24c0 1.105-.895 2-2 2h-6c-1.105 0-2-.895-2-2V36c0-1.105.895-2 2-2z"
+              />
+              <path
+                fill="#d06061"
+                d="M42 38c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"
+              />
+            </g>
+            <g
+              class="book-shelf__book book-shelf__book--three"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#ff5068"
+                d="M49 32h2c1.105 0 2 .86 2 1.92v25.906c0 1.06-.895 1.92-2 1.92h-2c-1.105 0-2-.86-2-1.92V33.92c0-1.06.895-1.92 2-1.92z"
+              />
+              <path
+                fill="#d93368"
+                d="M50 35c.552 0 1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1v-2c0-.552.448-1 1-1z"
+              />
+            </g>
+            <g fill-rule="evenodd">
+              <path
+                class="book-shelf__shelf"
+                fill="#ae8280"
+                d="M21 60h40c1.105 0 2 .895 2 2s-.895 2-2 2H21c-1.105 0-2-.895-2-2s.895-2 2-2z"
+              />
+              <path
+                fill="#855f6d"
+                d="M51.5 67c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5zm-21 0c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5z"
+              />
+            </g>
+          </svg>
         </div>
-        <div>
-            <a href="user.html">
-                <button class="user-button">
-                    <i class="fa-solid fa-user-circle"></i>
-                </button>
-            </a>
-        </div>
+      </a>
+      <a href="index.html" class="title-link">
+        <h1>BIBLIOMANIAC</h1>
+      </a>
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher..." />
+        <span class="search-icon">🔍</span>
+      </div>
+      <div>
+        <a href="user.html">
+          <button class="user-button">
+            <i class="fa-solid fa-user-circle"></i>
+          </button>
+        </a>
+      </div>
     </header>
 
     <section class="recent-activities">
-        <h1>Activités récentes</h1>
-
-        <div class="carousel">
-            <div class="book-card">
-                <div class="book-img-container">
-                    <img src="../IMG/metamo.png" alt="The Metamorphosis">
-                </div>
-                <div class="book-info">
-                    <div class="book-title-container">
-                        <div class="book-title">The Metamorphosis</div>
-                        <button class="read-button">Read</button>
-                    </div>
-                    <div class="book-author">Franz Kafka - 1915</div>
-                </div>
+      <h1>Activités récentes</h1>
+      <div class="carousel">
+        <div class="book-card">
+          <div class="book-img-container">
+            <img src="../IMG/metamo.png" alt="The Metamorphosis" />
+          </div>
+          <div class="book-info">
+            <div class="book-title-container">
+              <div class="book-title">The Metamorphosis</div>
+              <button class="read-button">Read</button>
             </div>
-            <a href="act1.html" class="activity-card">
-                <img src="IMG/kids.jpg" alt="Activités récentes">
-            </a>
-            <a href="act2.html" class="activity-card">
-                <img src="https://picsum.photos/300/200" alt="Activités récentes">
-            </a>
-            <a href="act3.html" class="activity-card">
-                <img src="IMG/superman.png" alt="Activités récentes">
-            </a>
-
+            <div class="book-author">Franz Kafka - 1915</div>
+          </div>
         </div>
+        <a href="act1.html" class="activity-card">
+          <img src="IMG/kids.jpg" alt="Activités récentes" />
+        </a>
+        <a href="act2.html" class="activity-card">
+          <img src="https://picsum.photos/300/200" alt="Activités récentes" />
+        </a>
+        <a href="act3.html" class="activity-card">
+          <img src="IMG/superman.png" alt="Activités récentes" />
+        </a>
+      </div>
     </section>
-
+    <!-- ciblage de popular pour fetchDatas.js (const popularContainer) en tant que conteneur principal -->
     <section class="popular">
-        <h2>Populaire</h2>
-        <div class="carousel">
-            <div class="book-card">
-                <img src="IMG/jaws.jpg" alt="Jaws">
-                <h3>Titre du livre</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/noth.jpeg" alt="Nothing Else But Miracles">
-                <h3>Titre du livre</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/metamo.png" alt="The Metamorphosis">
-                <h3>Titre du livre</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/sleep.jpeg" alt="The Metamorphosis">
-                <h3>To sleep in a sea of stars</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/oz.jpg" alt="Oz">
-                <h3>Titre du livre</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/think and grow.webp" alt="Think and Grow Rich">
-                <h3>Think and Grow Rich</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/noth.jpeg" alt="Nothing Else but Miracles">
-                <h3>Nothing Else but Miracles</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-            <div class="book-card">
-                <img src="IMG/TheSumofAllThings.webp" alt="The Sum of All Things">
-                <h3>The Sum of All Things</h3>
-                <p>Auteurs du livre</p>
-                <p>$???.00</p>
-            </div>
-        </div>
+      <h2>Populaire</h2>
+      <div class="carousel"></div>
     </section>
-
-    <section class="categories">
-        <h2>Catégories</h2>
+    <section class="categories-carousel">
+      <h2>Catégories</h2>
+      <div class="categories">
         <div class="carousel">
-            <div class="categ-card">
-                <img src="https://picsum.photos/2000/1000/?random" alt="Catégorie">
-                <div class="categ-title"><var>THRILLER</var></div>
-            </div>
-            <div class="categ-card">
-                <img src="https://picsum.photos/2000/1000/?random" alt="Catégorie">
-                <div class="categ-title"><var>HORROR</var></div>
-            </div>
-            <div class="categ-card">
-                <img src="https://picsum.photos/2000/1000/?random" alt="Catégorie">
-                <div class="categ-title"><var>DEV PERSO</var></div>
-            </div>
-            <div class="categ-card">
-                <img src="https://picsum.photos/2000/1000/?random" alt="Catégorie">
-                <div class="categ-title"><var>AVENTURE</var></div>
-            </div>
+          <div class="categ-card">
+            <img
+              src="https://picsum.photos/2000/1000/?random"
+              alt="Catégorie"
+            />
+            <div class="categ-title"><var>THRILLER</var></div>
+          </div>
+          <div class="categ-card">
+            <img
+              src="https://picsum.photos/2000/1000/?random"
+              alt="Catégorie"
+            />
+            <div class="categ-title"><var>HORROR</var></div>
+          </div>
+          <div class="categ-card">
+            <img
+              src="https://picsum.photos/2000/1000/?random"
+              alt="Catégorie"
+            />
+            <div class="categ-title"><var>DEV PERSO</var></div>
+          </div>
+          <div class="categ-card">
+            <img
+              src="https://picsum.photos/2000/1000/?random"
+              alt="Catégorie"
+            />
+            <div class="categ-title"><var>AVENTURE</var></div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer>
-        <nav>
-            <a href="index.html" class="active"><i class="fa-solid fa-book-open"></i></a>
-            <a href="mes-livres.html"><i class="fa-solid fa-bookmark"></i></a>
-            <a href="msg.html"><i class="fa-solid fa-comment"></i></a>
-            <a href="user.html"><i class="fa-solid fa-circle-user"></i></a>
-        </nav>
+      <nav>
+        <a href="index.html" class="active"
+          ><i class="fa-solid fa-book-open"></i
+        ></a>
+        <a href="mes-livres.html"><i class="fa-solid fa-bookmark"></i></a>
+        <a href="msg.html"><i class="fa-solid fa-comment"></i></a>
+        <a href="user.html"><i class="fa-solid fa-circle-user"></i></a>
+      </nav>
     </footer>
-    <script src="script.js"></script>
-</body>
-
+    <script src="fetchDatas.js"></script>
+  </body>
 </html>

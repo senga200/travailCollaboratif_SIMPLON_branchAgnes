@@ -1,91 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibliomaniac</title>
+    <link rel="stylesheet" href="mes-livres.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibliomaniac</title>
-  <link rel="stylesheet" href="mes-livres.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-  </style>
-</head>
-
-
-
-<body>
-  <div class="container">
-    
-    <header>
-      <a href="index.html" aria-label="Retour à la page d'accueil">
+  <body>
+    <div class="container">
+      <header>
+        <a href="index.html" aria-label="Retour à la page d'accueil">
           <button class="back-button" aria-label="Retour">
-              <i class="fa-solid fa-circle-chevron-left"></i>
+            <i class="fa-solid fa-circle-chevron-left"></i>
           </button>
-      </a>
-      <h1 class="titre-msg">Mes Livres</h1>
-
-
-      <div class="search-bar">
-          <input type="text" placeholder="Rechercher...">
-          <span class="search-icon">🔍</span>
-      </div>
-      <div>
-          <a href="user.html">
-              <button class="user-button">
-                  <i class="fa-solid fa-user-circle"></i>
-              </button>
-          </a>
-      </div>
-  </header>
-
-
-
-  
-  
-
-
-   <main aria-label="Liste des livres">
-  <div class="book-list" id="book-list" aria-label="Liste des livres favoris et téléchargés">
-    <div class="book-card">
-      <div class="book-img-container">
-        <img src="../IMG/metamo.png" alt="The Metamorphosis" class="book-cover">
-      </div>
-      <div class="book-info">
-        <div class="book-title-container">
-          <div class="book-title">The Metamorphosis</div>
-          <button class="read-button">Read</button>
-        </div>
-            <div class="book-author">Franz Kafka - 1915</div>
-          </div>
-          <div class="book-info">
-            <div class="book-title-container">
-              <div class="book-title">The Metamorphosis</div>
-              <button class="read-button">Read</button>
+        </a>
+        <h1>Mes livres</h1>
+      </header>
+      <div class="container">
+        <div class="toggle">
+          <div
+            class="tabs toggle"
+            aria-label="Choisir entre les livres favoris et téléchargés"
+          >
+            <input type="radio" id="fav" name="tab" checked />
+            <label for="fav" aria-label="Voir les livres favoris"
+              >Favoris</label
+            >
+            <input type="radio" id="downloaded" name="tab" />
+            <label for="downloaded" aria-label="Voir les livres téléchargés"
+              >Téléchargés</label
+            >
+            <div id="flap" aria-hidden="true">
+              <span class="content">Favoris</span>
             </div>
-            <div class="book-author">Franz Kafka - 1915</div>
           </div>
         </div>
       </div>
-    </main>
+      <!-- cibler le conteneur principal pour fetchDatas.js -->
+      <main aria-label="Liste des livres" id="book-details">
+        <!-- ciblage book-list pour modif du dom (innerHTML etc...) -->
+        <div
+          class="book-list"
+          id="book-list"
+          aria-label="Liste des livres favoris et téléchargés"
+        ></div>
+      </main>
 
-    <footer>
-      <nav aria-label="Navigation du site">
-        <a href="index.html" aria-label="Accéder à la bibliothèque">
-          <i class="fa-solid fa-book-open"></i>
-        </a>
-        <a href="mes-livres.html" class="active" aria-label="Voir mes livres">
-          <i class="fa-solid fa-bookmark"></i>
-        </a>
-        <a href="msg.html" aria-label="Voir les messages">
-          <i class="fa-solid fa-comment"></i>
-        </a>
-        <a href="user.html" aria-label="Accéder à mon profil">
-          <i class="fa-solid fa-circle-user"></i>
-        </a>
-      </nav>
-    </footer>
-  </div>
-  <script src="fetchDatas.js"></script>
-</body>
-
+      <footer>
+        <nav aria-label="Navigation du site">
+          <a href="index.html" aria-label="Accéder à la bibliothèque">
+            <i class="fa-solid fa-book-open"></i>
+          </a>
+          <a href="mes-livres.html" aria-label="Voir mes livres">
+            <i class="fa-solid fa-bookmark"></i>
+          </a>
+          <a href="msg.html" class="active" aria-label="Voir les messages">
+            <i class="fa-solid fa-comment"></i>
+          </a>
+          <a href="user.html" aria-label="Accéder à mon profil">
+            <i class="fa-solid fa-circle-user"></i>
+          </a>
+        </nav>
+      </footer>
+    </div>
+    <script src="fetchDatas.js"></script>
+  </body>
 </html>

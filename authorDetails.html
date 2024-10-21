@@ -19,59 +19,123 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="bookDetailsStyle.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <div class="header-container">
+      <a href="index.html">
+        <div class="animated-icon">
+          <svg
+            class="book-shelf"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 84 94"
+            height="60"
+            width="60"
+          >
+            <path
+              fill="none"
+              d="M37.612 92.805L4.487 73.71c-2.75-1.587-4.45-4.52-4.45-7.687L.008 27.877c-.003-3.154 1.676-6.063 4.405-7.634L37.558 1.167c2.73-1.57 6.096-1.566 8.835.013l33.124 19.096c2.75 1.586 4.45 4.518 4.45 7.686l.028 38.146c.002 3.154-1.677 6.063-4.406 7.634L46.445 92.818c-2.73 1.57-6.096 1.566-8.834-.013z"
+            />
+            <g
+              class="book-shelf__book book-shelf__book--one"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#5199fc"
+                d="M31 29h4c1.105 0 2 .895 2 2v29c0 1.105-.895 2-2 2h-4c-1.105 0-2-.895-2-2V31c0-1.105.895-2 2-2z"
+              />
+              <path
+                fill="#afd7fb"
+                d="M34 36h-2c-.552 0-1-.448-1-1s.448-1 1-1h2c.552 0 1 .448 1 1s-.448 1-1 1zm-2 1h2c.552 0 1 .448 1 1s-.448 1-1 1h-2c-.552 0-1-.448-1-1s.448-1 1-1z"
+              />
+            </g>
+            <g
+              class="book-shelf__book book-shelf__book--two"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#ff9868"
+                d="M39 34h6c1.105 0 2 .895 2 2v24c0 1.105-.895 2-2 2h-6c-1.105 0-2-.895-2-2V36c0-1.105.895-2 2-2z"
+              />
+              <path
+                fill="#d06061"
+                d="M42 38c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"
+              />
+            </g>
+            <g
+              class="book-shelf__book book-shelf__book--three"
+              fill-rule="evenodd"
+            >
+              <path
+                fill="#ff5068"
+                d="M49 32h2c1.105 0 2 .86 2 1.92v25.906c0 1.06-.895 1.92-2 1.92h-2c-1.105 0-2-.86-2-1.92V33.92c0-1.06.895-1.92 2-1.92z"
+              />
+              <path
+                fill="#d93368"
+                d="M50 35c.552 0 1 .448 1 1v2c0 .552-.448 1-1 1s-1-.448-1-1v-2c0-.552.448-1 1-1z"
+              />
+            </g>
+            <g fill-rule="evenodd">
+              <path
+                class="book-shelf__shelf"
+                fill="#ae8280"
+                d="M21 60h40c1.105 0 2 .895 2 2s-.895 2-2 2H21c-1.105 0-2-.895-2-2s.895-2 2-2z"
+              />
+              <path
+                fill="#855f6d"
+                d="M51.5 67c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5zm-21 0c-.828 0-1.5-.672-1.5-1.5V64h3v1.5c0 .828-.672 1.5-1.5 1.5z"
+              />
+            </g>
+          </svg>
+        </div>
+      </a>
+      <div class="titre-page">
         <a href="index.html" aria-label="Retour à la page d'accueil">
-          <i class="fa-solid fa-backward"></i>
-        </a>
-        <h1 class="details-title">L'auteur</h1>
-        <a href="#" aria-label="Partager cette page">
-          <span class="iconShare"> Partager </span>
-          <i class="fa-solid fa-share-nodes"></i>
-        </a>
-        <a href="#" aria-label="Ajouter cet auteur aux favoris">
-          <span class="iconFav"> ajouter aux favoris </span>
-          <i class="fa-solid fa-bookmark"></i>
+          <h1>BIBLIOMANIAC</h1>
         </a>
       </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Rechercher..."
+          aria-label="Champ de recherche"
+        />
+        <span class="search-icon" aria-hidden="true">🔍</span>
+      </div>
     </header>
+    <div class="header-container">
+      <a href="index.html" aria-label="Retour à la page d'accueil">
+        <i class="fa-solid fa-backward"></i>
+      </a>
+      <h1 class="details-title">L'auteur</h1>
+      <a href="#" aria-label="Partager cette page">
+        <span class="iconShare"> Partager </span>
+        <i class="fa-solid fa-share-nodes"></i>
+      </a>
+      <a href="#" aria-label="Ajouter cet auteur aux favoris">
+        <span class="iconFav"> ajouter aux favoris </span>
+        <i class="fa-solid fa-bookmark"></i>
+      </a>
+    </div>
     <main>
       <div class="filAriane" aria-label="Fil d'Ariane pour la navigation">
         <a href="index.html">Accueil</a>
         <span> > </span>
-        <a href="bookDetails.html">Titre du livre</a>
+        <a href="#">l'auteur</a>
       </div>
-      <div class="main-container">
-        <div class="authorDetails-container">
+      <!-- ciblage author-main-container en tant que conteneur principal pour fetchDatas.js -->
+      <div id="author-main-container" class="main-container">
+        <div id="authorDetails-container" class="authorDetails-container">
           <img
             src="https://avatar.iran.liara.run/public"
             alt="Photo de profil de l'auteur"
             class="author-pix"
             aria-label="Image de l'auteur"
           />
-          <div class="author-details">
-            <h3 class="details-title">Nom de l'auteur</h3>
-            <span class="author-info">
-              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-              <p
-                class="book-author"
-                aria-label="Nombre de livres écrits par l'auteur"
-              >
-                10 livres
-              </p>
-            </span>
-            <span
-              class="solid-stars"
-              aria-label="Évaluation de l'auteur : 5 étoiles"
-            >
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </span>
+          <!-- ciblage author-details pour fetchDatas.js pour la modif du dom (innerHTML etc...)-->
+          <div id="author-details" class="author-details">
+            <!-- crééé par fetchDatas.js -->
           </div>
         </div>
         <section
@@ -79,8 +143,9 @@
           aria-label="Navigation dans les sections d'information sur l'auteur"
         >
           <a
-            href="bookDetails.html"
+            href="authorDetails.html?id=${id}"
             class="nav-link"
+            id="link-book"
             aria-label="À propos de ce livre"
             >À propos de ce livre</a
           >
@@ -94,30 +159,24 @@
             >Critiques</a
           >
         </section>
-        <div class="about-container">
+        <!-- ciblage about-container pour fetchDatas.js -->
+        <div id="about-container" class="about-container">
           <section class="about">
-            <h2>À propos de cet auteur</h2>
-            <br />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip. Nam ultricies at orci vitae sagittis.<br />
-              <br />
-              Duis ullamcorper vehicula dapibus. Aenean feugiat, nunc nec
-              iaculis hendrerit, sem est gravida purus, et tristique elit ligula
-              eu est. Aliquam erat volutpat. Duis auctor enim eu suscipit
-              sollicitudin. Aliquam ornare auctor sodales. Interdum et malesuada
-              fames ac ante ipsum primis in faucibus. Integer efficitur dui ac
-              erat maximus imperdiet sit amet non ipsum. Morbi bibendum mattis
-              eros ut tristique. Praesent elementum consequat quam, et porttitor
-              purus pharetra sit amet. Vestibulum tempus dui quis odio eleifend
-              faucibus.
-            </p>
+            <!-- créee par fetchDatas.js -->
           </section>
         </div>
       </div>
     </main>
+    <footer>
+      <nav>
+        <a href="index.html" class="active"
+          ><i class="fa-solid fa-book-open"></i
+        ></a>
+        <a href="mes-livres.html"><i class="fa-solid fa-bookmark"></i></a>
+        <a href="msg.html"><i class="fa-solid fa-comment"></i></a>
+        <a href="user.html"><i class="fa-solid fa-circle-user"></i></a>
+      </nav>
+    </footer>
     <script src="fetchDatas.js"></script>
   </body>
 </html>

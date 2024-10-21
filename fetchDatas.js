@@ -10,14 +10,30 @@ async function getData() {
 }
 
 getData().then((data) => {
+  // recup l id dans l'url pour afficher les datas
+  const queryString_url_id = window.location.search;
+  console.log("id dans l'url", queryString_url_id);
+
+  const urlParams = new URLSearchParams(queryString_url_id);
+  console.log("object url params", urlParams);
+  const theId = urlParams.get("id");
+  console.log("the id", theId);
+  // Convertir theId en nombre pour la comparaison
+  const numericId = Number(theId);
+
   // Vérifier sur quelle page on est
   const isIndexPage = document.querySelector(".popular"); // Check si on est sur index.html
-  const isMesLivresPage = document.getElementById("book-list"); // Check si on est sur mes-livres.html
-  const bookDetailsPage = document.getElementById("book-details"); // Check si on est sur bookDetails.html
+  const isMesLivresPage = document.getElementById("book-details"); // Check si on est sur mes-livres.html
+  const isBookDetailsPage = document.getElementById(
+    "bookDetailsMain-container"
+  ); // Check si on est sur bookDetails.html
+  const isAuthorPage = document.getElementById("author-main-container"); // Check si on est sur author.html
 
+  //PAGE INDEX --- HOME
   if (isIndexPage) {
-    // On est sur index.html, on affiche les livres dans la section "Populaire"
+    // ciblage du conteneur Popular et carousel
     const popularContainer = document.querySelector(".popular .carousel");
+    //et vider le contenu déjà présnt (normalemnt il n'y a rien j'ai déjà vidé le contenu en html)
     popularContainer.innerHTML = "";
 
     data.books.forEach((book) => {
@@ -39,20 +55,24 @@ getData().then((data) => {
 
       const bookRating = document.createElement("div");
       bookRating.classList.add("book-rating");
-      bookRating.textContent = book.rating;
+      bookRating.textContent = `${"★".repeat(book.rating)}`;
 
-      // add les éléments au bookCard
-      bookCard.appendChild(bookImage);
-      bookCard.appendChild(bookTitle);
-      bookCard.appendChild(bookAuthor);
-      bookCard.appendChild(bookPrice);
-      bookCard.appendChild(bookRating);
+      const bookLink = document.createElement("a");
+      bookLink.href = `bookDetails.html?id=${book.id}`;
 
-      // add la bookCard au conteneur "Populaire"
+      //add les elts au bookLink
+      bookLink.appendChild(bookImage);
+      bookLink.appendChild(bookTitle);
+      bookLink.appendChild(bookAuthor);
+      bookLink.appendChild(bookPrice);
+      bookLink.appendChild(bookRating);
+      //add bookCard au bookLink
+      bookCard.appendChild(bookLink);
+      //add bookCard au conteneur "Populaire"
       popularContainer.appendChild(bookCard);
     });
-  } 
-  
+  }
+  //PAGE MES LIVRES --TOUS LES LIVRES
   else if (isMesLivresPage) {
     // On est sur mes-livres.html, on affiche les livres dans la liste des livres
     const bookListContainer = document.getElementById("book-list");
@@ -62,6 +82,11 @@ getData().then((data) => {
       // Créer la div principale pour chaque livre
       const bookDiv = document.createElement("div");
       bookDiv.classList.add("book");
+
+      // Créer un lien qui englobe toute la carte du livre
+      const bookLink = document.createElement("a");
+      bookLink.href = `bookDetails.html?id=${book.id}`;
+      bookLink.classList.add("book-link"); // Ajoute une classe si tu veux le styliser
 
       // Div pour l'image du livre
       const bookImageDiv = document.createElement("div");
@@ -104,60 +129,105 @@ getData().then((data) => {
       bookInfosDiv.appendChild(bookPrice);
       bookInfosDiv.appendChild(bookmark);
 
-      // Ajouter l'image et les infos dans la carte principale
-      bookDiv.appendChild(bookImageDiv);
-      bookDiv.appendChild(bookInfosDiv);
+      // Ajouter l'image et les infos dans le lien
+      bookLink.appendChild(bookImageDiv);
+      bookLink.appendChild(bookInfosDiv);
+
+      // Ajouter le lien (contenant toute la carte) dans la div principale
+      bookDiv.appendChild(bookLink);
 
       // Ajouter la carte complète au container
       bookListContainer.appendChild(bookDiv);
     });
+  }
 
-  } else if (bookDetailsPage) {
-    // On est sur bookDetails.html, on affiche les détails du livre
-    const bookId = new URLSearchParams(window.location.search).get("id");
-    const book = data.books.find((book) => book.id === bookId);
-
-    const bookDetailsContainer = document.getElementById("book-details");
+  //PAGE DETAILS DU LIVRE -- BOOK DETAILS
+  if (isBookDetailsPage) {
+    // ciblage du conteneur bookDetails-container
+    const bookDetailsContainer = document.getElementById(
+      "bookDetails-container"
+    );
+    // vidage du contenu déjà présent (normalement il n'y a rien j'ai déjà vidé le contenu en html)
     bookDetailsContainer.innerHTML = "";
+    console.log("hello from book details page");
+    console.log("datas de book details", data);
 
-    const bookDiv = document.createElement("div");
-    bookDiv.classList.add("book-details");
+    const selectedBook = data.books.find((book) => book.id === numericId);
+    console.log("hello");
+    console.log("selected book", selectedBook);
 
-    const bookImage = document.createElement("img");
-    bookImage.src = book.image;
-    bookImage.alt = book.title;
+    if (selectedBook) {
+      if (selectedBook) {
+        bookDetailsContainer.innerHTML = `
+          <img src="${selectedBook.image}" alt="${selectedBook.title}" />
+          <h3 class="details-title">${selectedBook.title}</h3>
+          <span class="book-info">
+            <p class="book-author"> ${selectedBook.author}</p>
+            <p class="book-date">Date de publication : ${
+              selectedBook.publicationDate
+            }</p>
+          </span>
+          <span class="solid-stars" aria-label="Évaluation du livre : ${"★".repeat(
+            selectedBook.rating
+          )} étoiles">
+            ${"★".repeat(selectedBook.rating)}
+          </span>
+        `;
 
-    const bookRating = document.createElement("div");
-    bookRating.classList.add("book-rating");
-    bookRating.textContent = `${"★".repeat(book.rating)} Note`;
+        const linkAuthor = document.getElementById("link-author");
+        linkAuthor.href = `authorDetails.html?id=${selectedBook.id}`;
 
-    const bookTitle = document.createElement("div");
-    bookTitle.classList.add("book-title");
-    bookTitle.textContent = book.title;
+        // const bookDetailsContainerMain = document.getElementById(
+        //   "bookDetails-container"
+        // );
+        // bookDetailsContainerMain.prepend(bookCoverImage);
 
-    const bookAuthor = document.createElement("div");
-    bookAuthor.classList.add("book-author");
-    bookAuthor.textContent = book.author;
+        const aboutContainer = document.querySelector(
+          ".about-container .about"
+        );
+        aboutContainer.innerHTML = `
+          <h2>À propos de cet e-book</h2>
+          <br />
+          <p>${selectedBook.description}</p>
+        `;
+      }
+      console.log("Livre non trouvé");
+    }
+  }
+  //PAGE AUTEUR -- AUTHOR
+  if (isAuthorPage) {
+    const authorContainer = document.getElementById("author-details");
+    const aboutContainer = document.querySelector(".about-container");
+    console.log("hello from author page");
+    console.log("datas de author", data);
+    // Convertir theId en nombre pour la comparaison
+    // const numericId = Number(theId);
 
-    const bookPrice = document.createElement("div");
-    bookPrice.classList.add("book-price");
-    bookPrice.textContent = `${book.price}`;
+    const selectedAuthor = data.books.find((book) => book.id === numericId);
+    console.log("hello");
 
-    const bookDescription = document.createElement("div");
-    bookDescription.classList.add("book-description");
-    bookDescription.textContent = book.description;
+    const authorName = selectedAuthor.author;
+    console.log("Nom de l'auteur : ", authorName);
 
-    bookDiv.appendChild(bookImage);
-    bookDiv.appendChild(bookRating);
-    bookDiv.appendChild(bookTitle);
-    bookDiv.appendChild(bookAuthor);
-    bookDiv.appendChild(bookPrice);
-    bookDiv.appendChild(bookDescription);
+    if (selectedAuthor) {
+      //creation du lien vers le livre de l'auteur
 
-    bookDetailsContainer.appendChild(bookDiv);
+      authorContainer.innerHTML = `
+        <h3 class="details-title">${selectedAuthor.author}</h3>
+        <span class="author-info">
+          <p class="book-author"> <i class="fa-solid fa-book-open" aria-hidden="true"></i> ${selectedAuthor.numberOfBooks} books </p>
+
+      `;
+      aboutContainer.innerHTML = `
+      <br />
+        <h2>À propos de cet auteur</h2>
+        <br />
+        <p>${selectedAuthor.aboutAuthor}</p>
+      `;
+      const linkBook = document.getElementById("link-book");
+      linkBook.href = `bookDetails.html?id=${selectedAuthor.id}`;
+    }
   } else {
-    console.log("erreur");
+    console.log("erreur !!");
   }
 });
-
-//récup les donnnées de book pour la page bookDetails et les affiche dans le DOM à partir de l'id de l'url TOOOOODOOOOOO !!

@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Inter', sans-serif;
     background-color: #f5f5f5;
     margin-top: 5rem;
     padding: 0;
@@ -32,17 +32,18 @@ header {
     /* Garde la hauteur de la navbar inchangée */
 }
 
+
 header h1 {
     font-size: 2rem;
     flex-grow: 1;
-    text-align: center;
+
     background: linear-gradient(to bottom, #e8c84c, #ffffff);
-    /* Golden to white gradient */
+
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
-    /* Prevent underline */
+
 }
 
 .search-bar {
@@ -69,8 +70,24 @@ header h1 {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 1rem;
+    padding: 2rem;
     gap: 1rem;
+    align-items: center;
+}
+
+.popular h2 {
+    padding-top: 5rem;
+    font-size: 3rem;
+    color: white;
+
+}
+
+.popular a {
+    text-decoration: none;
+}
+
+.book-rating {
+    color: #fdd835;
 }
 
 .carousel .activity-card,
@@ -104,47 +121,68 @@ header h1 {
     /* Add a larger shadow on hover */
 }
 
-/* Navigation *//* Navigation */
+.popular {
+    background-color: #3d1e54;
+    border-radius: 5rem;
+    text-align: center;
+    margin: 0 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Navigation */
+/* Navigation */
 footer {
-    width: 100%; /* Ensure the footer spans the full width */
+    width: 100%;
+    /* Ensure the footer spans the full width */
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to top, #4D3857, #3d1e54); /* Dark violet gradient */
+    background: linear-gradient(to top, #4D3857, #3d1e54);
+    /* Dark violet gradient */
     padding: 1rem 0;
     display: flex;
-    justify-content: center; /* Center the navbar */
-  }
-  
-  footer nav {
+    justify-content: center;
+    /* Center the navbar */
+}
+
+footer nav {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 500px; /* Adjust as needed */
-  }
-  
-  footer nav a {
+    max-width: 500px;
+    /* Adjust as needed */
+}
+
+footer nav a {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  footer nav a.active {
+}
+
+footer nav a.active {
     color: #fdd835;
-  }
-  
-  footer nav a:hover {
+}
+
+footer nav a:hover {
     color: #fdd835;
-  }
+}
 
 .recent-activities {
     padding: 1rem;
     width: 100%;
     /* Make it responsive to the width of the screen */
     box-sizing: border-box;
+    text-align: center;
+}
+
+.recent-activities h1 {
+    padding-top: 5rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
 .categories {
+    text-align: center;
     padding: 1rem 0;
     margin-bottom: 5rem;
     /* Ensure consistent padding, remove left and right padding */
@@ -160,6 +198,7 @@ footer {
     margin-left: 0;
     /* Ensure the carousel starts from the left edge */
 }
+
 .categories .categ-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -167,7 +206,8 @@ footer {
     height: 15rem;
     background-color: #fff;
     padding: 0.9375rem;
-    border-radius: 6.25rem 6.25rem 3.125rem 3.125rem; /* Plus arrondi sur le haut */
+    border-radius: 6.25rem 6.25rem 3.125rem 3.125rem;
+    /* Plus arrondi sur le haut */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
@@ -176,7 +216,8 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Pour éviter que le contenu dépasse */
+    overflow: hidden;
+    /* Pour éviter que le contenu dépasse */
 }
 
 
@@ -184,7 +225,8 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 6.25rem 6.25rem 3.125rem 3.125rem; /* Plus arrondi sur le haut */
+    border-radius: 6.25rem 6.25rem 3.125rem 3.125rem;
+    /* Plus arrondi sur le haut */
     flex-grow: 1;
 }
 
@@ -195,6 +237,12 @@ footer {
     /* Add a larger shadow on hover */
 }
 
+.categories-carousel h2 {
+    padding-top: 5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
 /* Title */
 .categ-title {
     position: absolute;
@@ -202,14 +250,17 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #000000;
-    font-size: 1.5rem; /* Adjust as needed */
+    font-size: 1.5rem;
+    /* Adjust as needed */
     font-weight: bold;
     font-family: 'Merriweather', serif;
     text-transform: uppercase;
     text-align: center;
-    background: rgba(255, 255, 255, 0.734); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.734);
+    /* Semi-transparent background */
     padding: 0.5rem 1rem;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.625rem;
+    /* 10px */
 }
 
 @media (max-width: 1024px) {
@@ -278,6 +329,7 @@ footer {
     display: flex;
     align-items: center;
     overflow: visible;
+    padding-right: 1rem;
     /* Permet de dépasser si nécessaire */
 }
 
